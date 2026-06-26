@@ -2,7 +2,7 @@ import { Aibetter } from "./Aibetter"
 import { Button } from "./Button"
 export const Hero = () => {
   return (
-    <div className="flex flex-col items-center justify-center gap-4 mt-10 w-[80%] font-serif">
+    <div className="flex flex-col items-center justify-center gap-4 mt-10 w-[85%] font-serif">
        <h2 className="text-4xl text-center font-bold">Manage Your Project 
         <br /> Effortlessly with<span className="text-purple-800"> Cyberplan Ai</span>
          </h2>

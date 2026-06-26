@@ -7,7 +7,7 @@ function App() {
 
   return (
     
-    <div className='flex flex-col items-center  w-full  bg-linear-to-b from-[#2e026d] to-[#15162c] text-white'>
+    <div className='flex flex-col items-center  w-full  bg-linear-to-r from-[#1c023f] to-[#000000] text-white'>
       <Navbar />
       <Hero />
       <Service />

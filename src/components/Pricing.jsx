@@ -5,7 +5,7 @@ export const Pricing = () =>{
     return(
         <div className="grid grid-cols-1 w-full md:grid-cols-2 md:max-w-6xl mx-auto  font-serif mt-20 mb-30">
             <div className="pb-5 mx-4">
-                <h2 className=" text-3xl font-bold pb-3"> One Plan <br /> Everything Included</h2>
+                <h2 className=" text-2xl font-bold pb-3"> One Plan <br /> Everything Included</h2>
                 <p className="pb-3">Use for free, no hidden charges</p>
                 <Button 
                 className={`bg-purple-900 rounded-lg py-2 px-5 hover:bg-slate-300 hover:text-purple-900 cursor-pointer`}

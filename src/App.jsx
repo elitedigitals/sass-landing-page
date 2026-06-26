@@ -7,6 +7,7 @@ import { Service } from './components/Service.jsx'
 import {Pricing} from './components/Pricing.jsx'
 import './index.css'
 import { Card } from './components/Card.jsx'
+import { Footer } from './components/Footer.jsx'
 function App() {
 
   return (
@@ -18,6 +19,7 @@ function App() {
         <Card />
         <Service />
         <Pricing />
+        <Footer />
       </BrowserRouter>
     </div>
      

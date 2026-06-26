@@ -1,11 +1,12 @@
 
 
 import { BrowserRouter } from 'react-router-dom'
-import { Aibetter } from './components/Aibetter.jsx'
 import { Hero } from './components/Hero.jsx'
 import { Navbar } from './components/Navbar.jsx'
 import { Service } from './components/Service.jsx'
+import {Pricing} from './components/Pricing.jsx'
 import './index.css'
+import { Card } from './components/Card.jsx'
 function App() {
 
   return (
@@ -14,8 +15,9 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Hero />
-        <Aibetter />
+        <Card />
         <Service />
+        <Pricing />
       </BrowserRouter>
     </div>
      

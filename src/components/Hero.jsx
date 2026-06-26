@@ -15,7 +15,7 @@ export const Hero = () => {
 
       <Button
         onClick={() => console.log("Get Started clicked")}
-        className="mt-4 rounded-lg bg-purple-900 px-10 py-4 text-slate-300 transition duration-300 ease-in-out hover:bg-slate-300 hover:text-purple-900"
+        className="mt-4 rounded-lg bg-purple-900 px-10 py-4 text-slate-300 transition-all duration-700 ease-in-out hover:bg-slate-300 hover:text-purple-900 hover:-translate-y-0.5"
         label="Get Started"
       />
 

@@ -34,12 +34,12 @@ export const Service = () => {
   return (
     <div className="pt-10 mt-10 font-serif w-full sm:max-w-6xl mx-auto">
         <div>
-            <h2 className="text-center font-serif py-3 mb-5 text-4xl font-bold">Our Services</h2>
+            <h2 className="text-center font-serif py-3 mb-5 text-4xl font-bold ">Our Services</h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {
                 services.map((service, index)=>(
-                    <div key={index} className="bg-purple-900/30  p-4 gap-2 m-4 rounded-lg shadow-lg shadow-purple-900/30"> 
+                    <div key={index} className="bg-purple-900/30  p-4 m-4 rounded-lg shadow-lg shadow-purple-900/30"> 
                         <div className="flex justify-between mb-3">
                             <div>{service.icon}</div>
                             <div>

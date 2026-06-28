@@ -1,6 +1,6 @@
 import { Button } from "./Button"
 import { motion } from "framer-motion"
-import { staggerContainer, staggerItem, fadeUp } from "../lib/motion"
+import { staggerContainer, staggerItem } from "../lib/motion"
 
 
 export const Hero = () => {
@@ -9,7 +9,7 @@ export const Hero = () => {
       className="mx-auto flex w-full max-w-6xl flex-col items-center gap-4 px-4 pt-10 font-serif sm:px-6"
       initial="hidden"
       animate="show"
-      variants={staggerContainer}
+      variants={staggerContainer()}
     >
       <motion.h2 variants={staggerItem} className="text-center text-4xl font-bold">
         Manage Your Project
@@ -30,7 +30,7 @@ export const Hero = () => {
       </motion.div>
 
       <motion.img
-        variants={fadeUp(0.7)}
+        variants={staggerItem}
         src="./landing.jpg"
         alt="landing"
         className="mt-10 w-full rounded-lg object-cover shadow-lg shadow-purple-900/20 sm:aspect-[16/9]"

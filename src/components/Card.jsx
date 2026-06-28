@@ -1,5 +1,7 @@
 import { MdLightbulb, MdSync } from "react-icons/md";
 import { FaUsers } from "react-icons/fa";
+import {motion} from "framer-motion"
+import { fadeUp, staggerContainer, staggerItem } from "../lib/motion";
 
 const better = [
     {
@@ -21,16 +23,21 @@ const better = [
 
 export const Card = () => {
     return (
-        <div className="mt-10 max-w-6xl font-serif">
-            <div className="text-center mb-4">
-                <h2 className="text-3xl font-bold mb-4 py-4">What makes Cyberplan Ai different?</h2>
-                <p className="text-slate-300">Cyberplan Ai stands out from traditional project management tools by integrating cutting-edge <br /> AI technology to provide intelligent insights, automate routine tasks, and enhance collaboration among team members.</p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 rounded-lg mx-auto p-4 gap-4">
+        <motion.div className="mt-10 max-w-6xl font-serif"
+        initial="hidden"
+        animate="show"
+        variants={staggerContainer}>
+            <motion.div className="text-center mb-4" variants={staggerItem}>
+                <motion.h2 className="text-3xl font-bold mb-4 py-4" variants={fadeUp(0.4)}>What makes Cyberplan Ai different?</motion.h2>
+                <motion.p className="text-slate-300" variants={fadeUp(0.5)}>Cyberplan Ai stands out from traditional project management tools by integrating cutting-edge <br /> AI technology to provide intelligent insights, automate routine tasks, and enhance collaboration among team members.</motion.p>
+            </motion.div>
+            <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 rounded-lg mx-auto p-4 gap-4" variants={staggerItem}>
                 {better.map((item, index) => (
-                    <div
+                    <motion.div
                         key={index}
-                        className="flex flex-col items-center justify-center gap-2 bg-purple-900/30 backdrop-blur-md rounded-lg shadow-lg shadow-purple-900/20 p-4"
+                        className="flex flex-col items-center justify-center gap-2 bg-purple-900/30 backdrop-blur-md rounded-lg shadow-lg shadow-purple-900/20 p-4
+                         hover:border-slate-300 hover:border-b tracking-tight transition-all translate:-y-1"
+                        variants={fadeUp(0.6)}
                     >
                         <div className="text-4xl text-purple-500">
                             {item.icon}
@@ -39,9 +46,9 @@ export const Card = () => {
                             <h3 className="text-center mb-2 font-bold">{item.title}</h3>
                             <p className="text-center text-slate-300 text-sm">{item.description}</p>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     );
 };

@@ -1,20 +1,17 @@
 export const menuItems = [
     {
-        label: 'Home', link: '/'
+        label: "Home", link:"/"
     },
     {
-        label: 'About', link: '/about'
+        label: "About", link:"/about"
     },
     {
-        label: 'Contact', link: '/contact'
+        label: "Service", link:"/service"
     },
     {
-        label: 'Services', link: '/services'
+        label: "Contact", link:"/contact"
     },
     {
-        label: 'Faq', link: '/faq'
+        label: "Faq", link:"/faq"
     },
-    {
-        pricing: 'Pricing', link: '/pricing'
-    }
 ]

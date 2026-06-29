@@ -50,7 +50,7 @@ const ServiceCard = ({ service, index, total }) => {
       ref={cardRef}
       variants={staggerItem}
       style={{
-        top: `${230 + index * 24}px`,
+        top: `${95 + index * 24}px`,
         zIndex: index + 1,
         scale: scaleValue,
         opacity: opacityValue,
@@ -85,7 +85,7 @@ export const Service = () => {
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
         variants={staggerContainer()}
-        className="flex flex-col sm:grid sm:grid-cols-2 gap-2"
+        className="flex flex-col sm:grid mb-30 sm:grid-cols-2 gap-2"
       >
         {services.map((service, index) => (
           <ServiceCard

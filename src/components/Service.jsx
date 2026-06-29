@@ -32,17 +32,15 @@ const services = [
   },
 ]
 
-// Separate component per card — each card needs its OWN scroll progress,
-// which means each card needs its OWN ref and its OWN useScroll call.
 const ServiceCard = ({ service, index, total }) => {
   const cardRef = useRef(null)
 
   const { scrollYProgress } = useScroll({
     target: cardRef,
-    offset: ["start start", "end start"],
+    offset: ["center center", "center start"],
   })
 
-  const { scale, opacity } = stackCardTransform(scrollYProgress, index, total)
+  const { scale, opacity } = stackCardTransform(index, total)
 
   const scaleValue = useTransform(scrollYProgress, [0, 1], scale)
   const opacityValue = useTransform(scrollYProgress, [0, 1], opacity)
@@ -52,12 +50,12 @@ const ServiceCard = ({ service, index, total }) => {
       ref={cardRef}
       variants={staggerItem}
       style={{
-        top: `${index * 1.25}rem`,
+        top: `${230 + index * 24}px`,
         zIndex: index + 1,
         scale: scaleValue,
         opacity: opacityValue,
       }}
-      className="sticky sm:static bg-purple-900/30 p-4 m-4 rounded-lg shadow-lg shadow-purple-900/30"
+      className="sticky sm:static bg-purple-900 p-4 m-4 rounded-lg shadow-lg shadow-purple-900/30 "
     >
       <div className="flex justify-between mb-3">
         <div>{service.icon}</div>
@@ -78,7 +76,7 @@ const ServiceCard = ({ service, index, total }) => {
 export const Service = () => {
   return (
     <div className="pt-10 mt-10 font-serif w-full sm:max-w-6xl mx-auto">
-      <h2 className="text-center font-serif py-3 mb-5 text-4xl font-bold">
+      <h2 className="sticky top-0 z-50 text-center font-serif py-3 mb-5 text-4xl font-bold">
         Our Services
       </h2>
 
@@ -87,7 +85,7 @@ export const Service = () => {
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
         variants={staggerContainer()}
-        className="grid grid-cols-1 sm:grid-cols-2 gap-2"
+        className="flex flex-col sm:grid sm:grid-cols-2 gap-2"
       >
         {services.map((service, index) => (
           <ServiceCard

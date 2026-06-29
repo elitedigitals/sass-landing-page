@@ -50,13 +50,11 @@ export const scaleIn = (delay = 0) => ({
 // that returns the actual transform output values, because
 // scroll-linked animation needs live numbers, not hidden/show states.
 
-export const stackCardTransform = (scrollYProgress, index, total) => {
-  // Each card scales down a little and fades slightly as it gets covered,
-  // but the LAST card stays fully untouched since nothing covers it.
+export const stackCardTransform = (index, total) => {
   const isLast = index === total - 1
 
-  const scale = isLast ? 1 : [1, 0.92]
-  const opacity = isLast ? 1 : [1, 0.6]
+  const scale = isLast ? [1, 1] : [1, 0.85]
+  const opacity = isLast ? [1, 1] : [1, 0]
 
   return { scale, opacity }
 }
